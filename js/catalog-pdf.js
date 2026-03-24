@@ -7,6 +7,8 @@
   var MM10_PT = (10 * 72) / 25.4;
   var PAGE_W_PT = 595.28;
   var INNER_W_PT = PAGE_W_PT - 2 * MM10_PT;
+  /** Заглушка в репозиторії: images/image-stub.png */
+  var IMAGE_STUB_REL = "images/image-stub.png";
 
   function ensurePdfFonts() {
     if (typeof pdfMake === "undefined") return;
@@ -306,6 +308,20 @@
             });
         })
       );
+
+      var stubData = null;
+      try {
+        stubData = await fetchImageDataUrl(resolveImageUrl(IMAGE_STUB_REL));
+      } catch (e) {
+        stubData = null;
+      }
+      if (stubData) {
+        products.forEach(function (p) {
+          if (!imgById[p.id]) {
+            imgById[p.id] = stubData;
+          }
+        });
+      }
 
       var batches = chunkArray(products, 4);
       var content = batches.map(function (batch, idx) {

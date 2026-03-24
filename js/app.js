@@ -187,11 +187,22 @@
     initCardScrollAnimations();
   }
 
+  var IMAGE_STUB = "images/image-stub.png";
+
   function bindImgFallback(img) {
     img.addEventListener("error", function () {
-      this.style.display = "none";
-      var wrap = this.closest("[data-img-wrap]");
-      if (wrap) wrap.classList.add("is-placeholder");
+      if (this.dataset.stubFallback === "1") {
+        this.style.display = "none";
+        var wrap = this.closest("[data-img-wrap]");
+        if (wrap) wrap.classList.add("is-placeholder");
+        return;
+      }
+      this.dataset.stubFallback = "1";
+      try {
+        this.src = new URL(IMAGE_STUB, window.location.href).href;
+      } catch (e) {
+        this.src = IMAGE_STUB;
+      }
     });
   }
 
