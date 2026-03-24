@@ -128,8 +128,20 @@
       <p class="footer-pdf-hint">PDF-каталог формується автоматично з даних цього сайту (ціни та описи 2026).</p>
     </footer>
 
-    <div id="pdf-loading-overlay" class="pdf-loading-overlay" aria-live="polite">
-      <div class="pdf-spinner-text">Формуємо PDF-каталог...</div>
+    <div
+      id="pdf-loading-overlay"
+      class="pdf-loading-overlay"
+      aria-live="polite"
+      aria-busy="false"
+      role="alertdialog"
+      aria-labelledby="pdf-loading-title"
+      aria-describedby="pdf-loading-desc"
+    >
+      <div class="pdf-loading-card">
+        <div class="pdf-spinner-ring" aria-hidden="true"></div>
+        <p id="pdf-loading-title" class="pdf-spinner-text">Формуємо PDF-каталог…</p>
+        <p id="pdf-loading-desc" class="pdf-spinner-hint">Зачекайте кілька секунд. Не закривайте вкладку.</p>
+      </div>
     </div>
 
     <script src="js/products-data.js"></script>
