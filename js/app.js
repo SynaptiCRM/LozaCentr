@@ -373,16 +373,20 @@
 
   function initPdfButton() {
     if (!pdfBtn || typeof window.generateLozaCentrCatalogPdf !== "function") return;
+    var labelEl = pdfBtn.querySelector(".btn-pdf-label");
+    var initialLabel = labelEl ? labelEl.textContent : "";
     pdfBtn.addEventListener("click", function () {
       if (pdfBtn.disabled) return;
       pdfBtn.disabled = true;
       pdfBtn.classList.add("is-loading");
       pdfBtn.setAttribute("aria-busy", "true");
+      if (labelEl) labelEl.textContent = "Генерація...";
       Promise.resolve()
         .then(function () {
           return window.generateLozaCentrCatalogPdf();
         })
         .finally(function () {
+          if (labelEl) labelEl.textContent = initialLabel;
           pdfBtn.disabled = false;
           pdfBtn.classList.remove("is-loading");
           pdfBtn.setAttribute("aria-busy", "false");

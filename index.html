@@ -128,11 +128,13 @@
       <p class="footer-pdf-hint">PDF-каталог формується автоматично з даних цього сайту (ціни та описи 2026).</p>
     </footer>
 
-    <!-- Прихований макет для експорту в PDF (наповнюється скриптом) -->
-    <div id="pdf-export-root" class="pdf-export-root" aria-hidden="true"></div>
+    <div id="pdf-loading-overlay" class="pdf-loading-overlay" aria-live="polite">
+      <div class="pdf-spinner-text">Формуємо PDF-каталог...</div>
+    </div>
 
     <script src="js/products-data.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.2.12/pdfmake.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.2.12/vfs_fonts.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="js/catalog-pdf.js"></script>
     <!-- GSAP for premium animations -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
