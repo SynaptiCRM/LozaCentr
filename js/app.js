@@ -87,6 +87,7 @@
       "</div>" +
       "</div>" +
       '<div class="product-body">' +
+      '<div class="product-head">' +
       '<div class="product-code">Код ' +
       escapeHtml(p.id) +
       "</div>" +
@@ -94,11 +95,14 @@
       escapeHtml(p.name) +
       "</h2>" +
       note +
+      "</div>" +
+      '<div class="product-foot">' +
       '<div class="price-tags">' +
       prices +
       "</div>" +
       priceNote +
       (specs || noSpecs) +
+      "</div>" +
       "</div>" +
       "</article>"
     );
@@ -137,10 +141,10 @@
     grid.innerHTML = list.map(cardHTML).join("");
     if (countEl) countEl.textContent = list.length + " позицій";
     grid.querySelectorAll(".product-card").forEach(function (card) {
-      bindCardGlow(card);
       bindMediaTilt(card);
     });
     grid.querySelectorAll(".product-media img").forEach(bindImgFallback);
+    initCardScrollAnimations();
   }
 
   function bindImgFallback(img) {
@@ -149,20 +153,6 @@
       var wrap = this.closest("[data-img-wrap]");
       if (wrap) wrap.classList.add("is-placeholder");
     });
-  }
-
-  function bindCardGlow(card) {
-    card.addEventListener(
-      "pointermove",
-      function (e) {
-        var r = card.getBoundingClientRect();
-        var x = ((e.clientX - r.left) / r.width) * 100;
-        var y = ((e.clientY - r.top) / r.height) * 100;
-        card.style.setProperty("--mx", x + "%");
-        card.style.setProperty("--my", y + "%");
-      },
-      { passive: true }
-    );
   }
 
   function bindMediaTilt(card) {
@@ -181,7 +171,7 @@
         var px = (e.clientX - r.left) / r.width - 0.5;
         var py = (e.clientY - r.top) / r.height - 0.5;
         tilt.style.transform =
-          "rotateY(" + (px * 11).toFixed(2) + "deg) rotateX(" + (-py * 9).toFixed(2) + "deg)";
+          "rotateY(" + (px * 8).toFixed(2) + "deg) rotateX(" + (-py * 6).toFixed(2) + "deg)";
       },
       { passive: true }
     );
@@ -233,22 +223,66 @@
     });
   }
 
-  function wrapKineticTitle() {
-    var el = document.getElementById("hero-kinetic-title");
-    if (!el) return;
-    var text = el.textContent;
-    el.textContent = "";
-    for (var i = 0; i < text.length; i++) {
-      var ch = text[i];
-      if (ch === " ") {
-        el.appendChild(document.createTextNode(" "));
-        continue;
-      }
-      var span = document.createElement("span");
-      span.textContent = ch;
-      span.style.animationDelay = (i * 0.04).toFixed(2) + "s";
-      el.appendChild(span);
+  function initHeroAnimation() {
+    var ctaBlock = document.querySelector(".hero-cta-block");
+    var title = document.getElementById("hero-kinetic-title");
+    var lead = document.querySelector(".hero-lead");
+    var actions = document.querySelector(".hero-actions");
+
+    if (!ctaBlock || typeof gsap === "undefined") {
+      if (ctaBlock) ctaBlock.classList.add("is-visible");
+      return;
     }
+
+    gsap.set(ctaBlock, { opacity: 1 });
+    gsap.set([title, lead, actions], { opacity: 0, y: 28 });
+
+    gsap.to(title, {
+      opacity: 1,
+      y: 0,
+      duration: 1.1,
+      ease: "power3.out",
+      delay: 0.2,
+    });
+    gsap.to(lead, {
+      opacity: 1,
+      y: 0,
+      duration: 0.95,
+      ease: "power3.out",
+      delay: 0.45,
+    });
+    gsap.to(actions, {
+      opacity: 1,
+      y: 0,
+      duration: 0.85,
+      ease: "power3.out",
+      delay: 0.65,
+    });
+  }
+
+  function initCardScrollAnimations() {
+    if (typeof gsap === "undefined" || typeof ScrollTrigger === "undefined") return;
+
+    gsap.registerPlugin(ScrollTrigger);
+
+    var cards = grid.querySelectorAll(".product-card");
+    if (!cards.length) return;
+
+    gsap.set(cards, { opacity: 0, y: 40 });
+
+    ScrollTrigger.batch(cards, {
+      onEnter: function (batch) {
+        gsap.to(batch, {
+          opacity: 1,
+          y: 0,
+          duration: 0.7,
+          ease: "power2.out",
+          stagger: 0.08,
+        });
+      },
+      start: "top 92%",
+      once: true,
+    });
   }
 
   function initPdfButton() {
@@ -271,7 +305,7 @@
   }
 
   initSearchToggle();
-  wrapKineticTitle();
+  initHeroAnimation();
   initPdfButton();
   render(products);
 })();
