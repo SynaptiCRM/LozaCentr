@@ -1,13 +1,29 @@
 (function () {
   "use strict";
 
-  var products = window.LOZACENTR_PRODUCTS || [];
+  var products = (window.LOZACENTR_PRODUCTS || []).slice().sort(function (a, b) {
+    var na = parseFloat(String(a.id).replace(/[^0-9.]/g, "")) || 0;
+    var nb = parseFloat(String(b.id).replace(/[^0-9.]/g, "")) || 0;
+    return na - nb;
+  });
   var grid = document.getElementById("products-grid");
   var search = document.getElementById("catalog-search");
   var countEl = document.getElementById("result-count");
   var searchToggle = document.getElementById("search-toggle");
   var searchPanel = document.getElementById("search-panel");
   var pdfBtn = document.getElementById("btn-pdf-catalog");
+  var filterChipsEl = document.getElementById("filter-chips");
+  var filterResetEl = document.getElementById("filter-reset");
+
+  var activeType = "";
+  var activeSort = "";
+
+  var TYPE_LABELS = {
+    white: "Білі",
+    natural: "Натуральні",
+    colorful: "Кольорові",
+  };
+  var HIDDEN_TYPES = ["tall", "single"];
 
   function norm(s) {
     return (s || "").toString().toLowerCase().trim();
@@ -121,13 +137,37 @@
       .replace(/</g, "&lt;");
   }
 
+  function getProductPrice(p) {
+    var list = p.prices || [];
+    if (activeType) {
+      var match = list.filter(function (x) { return x.key === activeType; });
+      if (match.length) return match[0].amount;
+    }
+    if (!list.length) return Infinity;
+    return Math.min.apply(null, list.map(function (x) { return x.amount; }));
+  }
+
   function filterList(q) {
     var n = norm(q);
-    if (!n) return products.slice();
-    return products.filter(function (p) {
-      var hay = norm(p.id + " " + p.name);
-      return hay.includes(n);
+    var result = products.filter(function (p) {
+      if (n) {
+        var hay = norm(p.id + " " + p.name);
+        if (!hay.includes(n)) return false;
+      }
+      if (activeType) {
+        var hasType = (p.prices || []).some(function (x) { return x.key === activeType; });
+        if (!hasType) return false;
+      }
+      return true;
     });
+
+    if (activeSort === "asc") {
+      result.sort(function (a, b) { return getProductPrice(a) - getProductPrice(b); });
+    } else if (activeSort === "desc") {
+      result.sort(function (a, b) { return getProductPrice(b) - getProductPrice(a); });
+    }
+
+    return result;
   }
 
   function render(list) {
@@ -181,15 +221,61 @@
     });
   }
 
+  function isFiltered() {
+    return activeType !== "" || activeSort !== "";
+  }
+
+  function applyFilters() {
+    if (filterResetEl) {
+      if (isFiltered() || (search && search.value)) {
+        filterResetEl.removeAttribute("hidden");
+      } else {
+        filterResetEl.setAttribute("hidden", "");
+      }
+    }
+    render(filterList(search ? search.value : ""));
+  }
+
   function onSearch() {
-    if (!search) return;
-    render(filterList(search.value));
+    applyFilters();
   }
 
   if (search) {
     search.addEventListener("input", onSearch);
     search.addEventListener("search", onSearch);
   }
+
+  if (filterResetEl) {
+    filterResetEl.addEventListener("click", function () {
+      activeType = "";
+      activeSort = "";
+      if (search) search.value = "";
+      updateChips();
+      updateSortBtns();
+      applyFilters();
+    });
+  }
+
+  var sortAscBtn = document.getElementById("sort-asc");
+  var sortDescBtn = document.getElementById("sort-desc");
+
+  function updateSortBtns() {
+    if (sortAscBtn) sortAscBtn.classList.toggle("is-active", activeSort === "asc");
+    if (sortDescBtn) sortDescBtn.classList.toggle("is-active", activeSort === "desc");
+  }
+
+  function bindSortBtn(btn) {
+    if (!btn) return;
+    btn.addEventListener("click", function () {
+      var s = btn.dataset.sort;
+      activeSort = activeSort === s ? "" : s;
+      updateSortBtns();
+      applyFilters();
+    });
+  }
+
+  bindSortBtn(sortAscBtn);
+  bindSortBtn(sortDescBtn);
 
   function initSearchToggle() {
     if (!searchToggle || !searchPanel || !search) return;
@@ -304,7 +390,60 @@
     });
   }
 
+  function updateChips() {
+    if (!filterChipsEl) return;
+    filterChipsEl.querySelectorAll(".filter-chip").forEach(function (c) {
+      if (c.dataset.type === activeType) {
+        c.classList.add("is-active");
+      } else {
+        c.classList.remove("is-active");
+      }
+    });
+  }
+
+  function initFilters() {
+    if (!filterChipsEl) return;
+
+    var keys = [];
+    products.forEach(function (p) {
+      (p.prices || []).forEach(function (x) {
+        if (keys.indexOf(x.key) === -1) keys.push(x.key);
+      });
+    });
+
+    keys = keys.filter(function (k) { return HIDDEN_TYPES.indexOf(k) === -1; });
+    var order = ["white", "natural", "colorful"];
+    keys.sort(function (a, b) {
+      return order.indexOf(a) - order.indexOf(b);
+    });
+
+    var allChip = document.createElement("button");
+    allChip.type = "button";
+    allChip.className = "filter-chip is-active";
+    allChip.dataset.type = "";
+    allChip.textContent = "Всі";
+    filterChipsEl.appendChild(allChip);
+
+    keys.forEach(function (key) {
+      var btn = document.createElement("button");
+      btn.type = "button";
+      btn.className = "filter-chip";
+      btn.dataset.type = key;
+      btn.textContent = TYPE_LABELS[key] || key;
+      filterChipsEl.appendChild(btn);
+    });
+
+    filterChipsEl.addEventListener("click", function (e) {
+      var chip = e.target.closest(".filter-chip");
+      if (!chip) return;
+      activeType = chip.dataset.type;
+      updateChips();
+      applyFilters();
+    });
+  }
+
   initSearchToggle();
+  initFilters();
   initHeroAnimation();
   initPdfButton();
   render(products);

@@ -89,7 +89,28 @@
     </section>
 
     <main id="catalog">
-      <p id="result-count" class="catalog-meta"></p>
+      <div class="catalog-filters" id="catalog-filters">
+        <div class="filter-group">
+          <span class="filter-label">Тип</span>
+          <div class="filter-chips" id="filter-chips"></div>
+        </div>
+        <div class="filter-divider" aria-hidden="true"></div>
+        <div class="filter-group filter-group--sort">
+          <span class="filter-label">Сортування</span>
+          <div class="filter-sort-btns">
+            <button type="button" class="filter-sort-btn" id="sort-asc" data-sort="asc">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="18 15 12 9 6 15"/></svg>
+              Дешевші
+            </button>
+            <button type="button" class="filter-sort-btn" id="sort-desc" data-sort="desc">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+              Дорожчі
+            </button>
+          </div>
+        </div>
+        <button type="button" class="filter-reset" id="filter-reset" hidden>Скинути</button>
+        <p id="result-count" class="catalog-meta catalog-meta--inline"></p>
+      </div>
       <div class="products-grid" id="products-grid"></div>
     </main>
 
