@@ -311,30 +311,6 @@ window.LOZACENTR_PRODUCTS = [
     "image": "images/027.png"
   },
   {
-    "id": "027-2",
-    "name": "ТАРІЛКА КРУГЛА З ДВОМА РУЧКАМИ №2 (дві ручки)",
-    "dimensions": {
-      "heightCm": 8,
-      "heightWithHandleCm": 39,
-      "lengthCm": 20,
-      "widthCm": 20
-    },
-    "prices": [
-      {
-        "key": "white",
-        "label": "Білі",
-        "amount": 93
-      },
-      {
-        "key": "natural",
-        "label": "Натуральні",
-        "amount": 88
-      }
-    ],
-    "image": "images/027-2.png",
-    "priceNote": "Ціни як для коду 027"
-  },
-  {
     "id": "028",
     "prices": [
       {

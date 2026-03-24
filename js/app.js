@@ -55,9 +55,7 @@
 
     var prices = priceTagsHTML(p.prices);
 
-    var note = p.note
-      ? '<p class="catalog-note" role="status">' + escapeHtml(p.note) + "</p>"
-      : "";
+    var note = "";
     var priceNote = p.priceNote
       ? '<p class="price-note">' + escapeHtml(p.priceNote) + "</p>"
       : "";
@@ -101,7 +99,9 @@
       prices +
       "</div>" +
       priceNote +
+      '<div class="product-specs-area">' +
       (specs || noSpecs) +
+      "</div>" +
       "</div>" +
       "</div>" +
       "</article>"
