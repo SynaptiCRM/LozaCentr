@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="uk">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>LozaCentr — каталог виробів з лози 2026</title>
+    <meta
+      name="description"
+      content="Ознайомчий каталог LozaCentr: фото, коди, розміри та актуальні ціни 2026. Завантажити PDF, згенерований з цього сайту."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:ital,wght@0,500;0,600;1,500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body>
+    <header class="site-header site-header--floating">
+      <div class="header-inner">
+        <a href="#top" class="header-brand-link">
+          <img
+            src="assets/logo-lozacentr.png"
+            alt="LozaCentr"
+            class="header-logo-img"
+            width="180"
+            height="48"
+            decoding="async"
+          />
+        </a>
+        <div class="header-tools">
+          <div id="search-panel" class="search-panel" hidden>
+            <label class="visually-hidden" for="catalog-search">Пошук за кодом або назвою</label>
+            <input
+              type="search"
+              id="catalog-search"
+              class="search-input search-input--flyout"
+              placeholder="Код або назва…"
+              autocomplete="off"
+            />
+          </div>
+          <button
+            type="button"
+            class="search-toggle glass-icon-btn"
+            id="search-toggle"
+            aria-expanded="false"
+            aria-controls="search-panel"
+            aria-label="Відкрити пошук"
+          >
+            <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+              <circle cx="11" cy="11" r="7" />
+              <path d="M20 20l-4-4" />
+            </svg>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <section class="hero-immersive" id="top">
+      <div class="hero-visual">
+        <img
+          src="images/main-image.png"
+          alt=""
+          class="hero-main-photo"
+          width="1200"
+          height="800"
+          decoding="async"
+          fetchpriority="high"
+        />
+        <div class="hero-logo-frost">
+          <img
+            src="assets/logo-lozacentr.png"
+            alt="LozaCentr"
+            class="hero-logo-on-photo"
+            width="400"
+            height="120"
+            decoding="async"
+          />
+        </div>
+      </div>
+      <div class="hero-cta-block">
+        <h1 class="hero-kinetic-title" id="hero-kinetic-title">Вироби з лози ручної роботи</h1>
+        <p class="hero-lead">Ознайомчий каталог: фото, коди, розміри та ціни. Без оформлення замовлення на сайті.</p>
+        <div class="hero-actions">
+          <a class="hero-cta hero-cta--pulse" href="#catalog">Переглянути каталог</a>
+          <button type="button" class="btn-pdf-download" id="btn-pdf-catalog" aria-busy="false">
+            <span class="btn-pdf-icon" aria-hidden="true">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
+                <polyline points="14 2 14 8 20 8" />
+                <line x1="12" y1="18" x2="12" y2="11" />
+                <polyline points="9 15 12 18 15 15" />
+              </svg>
+            </span>
+            <span class="btn-pdf-label">Завантажити каталог PDF (2026)</span>
+            <span class="btn-pdf-spinner" aria-hidden="true"></span>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-process" aria-labelledby="process-heading">
+      <div class="process-inner">
+        <div class="process-visual" role="img" aria-label="Абстрактна текстура плетіння"></div>
+        <div class="process-copy">
+          <h2 id="process-heading">Ручна робота та перевірені розміри</h2>
+          <p>
+            Характеристики з друкованого каталогу LozaCentr — перевірені часом. Кожен кошик виготовляється вручну з лози та шпону,
+            з увагою до форми та балансу ручок.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <main id="catalog">
+      <p id="result-count" class="catalog-meta"></p>
+      <div class="products-grid" id="products-grid"></div>
+    </main>
+
+    <footer class="site-footer">
+      <div class="footer-brand">
+        <img src="assets/logo-lozacentr.png" alt="" class="footer-logo" width="120" height="32" decoding="async" />
+      </div>
+      <p><strong>LozaCentr</strong> — плетіння з лози</p>
+      <p>
+        Email:
+        <a href="mailto:lozacentr@gmail.com">lozacentr@gmail.com</a>
+        · Тел.:
+        <a href="tel:+380975797833">+380 (97) 579 78 33</a>
+      </p>
+      <p class="footer-pdf-hint">PDF-каталог формується автоматично з даних цього сайту (ціни та описи 2026).</p>
+    </footer>
+
+    <!-- Прихований макет для експорту в PDF (наповнюється скриптом) -->
+    <div id="pdf-export-root" class="pdf-export-root" aria-hidden="true"></div>
+
+    <script src="js/products-data.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="js/catalog-pdf.js"></script>
+    <script src="js/app.js"></script>
+  </body>
+</html>

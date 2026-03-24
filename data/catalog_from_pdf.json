@@ -1,0 +1,431 @@
+{
+  "084": {
+    "code": "084",
+    "name": "ВЕЛИКИЙ КРУГЛИЙ №2",
+    "dimensions": {
+      "heightCm": 13,
+      "heightWithHandleCm": 45,
+      "lengthCm": 30,
+      "widthCm": 30
+    },
+    "imageFile": "084.png"
+  },
+  "038": {
+    "code": "038",
+    "name": "ВЕЛИКИЙ ОВАЛЬНИЙ №2",
+    "dimensions": {
+      "heightCm": 15,
+      "heightWithHandleCm": 70,
+      "lengthCm": 35,
+      "widthCm": 25
+    },
+    "imageFile": "038.png"
+  },
+  "028": {
+    "code": "028",
+    "name": "ТАРІЛКА КРУГЛА №3",
+    "dimensions": {
+      "heightCm": 10,
+      "heightWithHandleCm": 41,
+      "lengthCm": 25,
+      "widthCm": 25
+    },
+    "imageFile": "028.png"
+  },
+  "092": {
+    "code": "092",
+    "name": "КАПЕЛЮХ КРУГЛИЙ З НАКЛАДКОЮ №2",
+    "dimensions": {
+      "heightCm": 10,
+      "heightWithHandleCm": 50,
+      "lengthCm": 40,
+      "widthCm": 30
+    },
+    "imageFile": "092.png"
+  },
+  "039": {
+    "code": "039",
+    "name": "ВЕЛИКИЙ ОВАЛЬНИЙ З МАЛОЮ РУЧКОЮ №3",
+    "dimensions": {
+      "heightCm": 20,
+      "heightWithHandleCm": 50,
+      "lengthCm": 40,
+      "widthCm": 30
+    },
+    "imageFile": "039.png"
+  },
+  "024": {
+    "code": "024",
+    "name": "КРУГЛИЙ З ОДНІЄЮ РУЧКОЮ №3",
+    "dimensions": {
+      "heightCm": 16,
+      "heightWithHandleCm": 60,
+      "lengthCm": 24,
+      "widthCm": 24
+    },
+    "imageFile": "024.png"
+  },
+  "102": {
+    "code": "102",
+    "name": "КРУГЛИЙ ПРОСТИЙ ЗІ ШПОНОМ",
+    "dimensions": {
+      "heightCm": 13,
+      "heightWithHandleCm": 60,
+      "lengthCm": 20,
+      "widthCm": 20
+    },
+    "imageFile": "102.png"
+  },
+  "083": {
+    "code": "083",
+    "name": "ВЕЛИКИЙ КРУГЛИЙ №1",
+    "dimensions": {
+      "heightCm": 11,
+      "heightWithHandleCm": 43,
+      "lengthCm": 30,
+      "widthCm": 30
+    },
+    "imageFile": "083.png"
+  },
+  "099": {
+    "code": "099",
+    "name": "ВЕЛИКИЙ ОВАЛЬНИЙ З ВИСОКОЮ РУЧКОЮ №3",
+    "dimensions": {
+      "heightCm": 20,
+      "heightWithHandleCm": 79,
+      "lengthCm": 42,
+      "widthCm": 30
+    },
+    "imageFile": "099.png"
+  },
+  "086": {
+    "code": "086",
+    "name": "ВЕЛИКИЙ ПРЯМОКУТНИЙ №1",
+    "dimensions": {
+      "heightCm": 12,
+      "heightWithHandleCm": 60,
+      "lengthCm": 25,
+      "widthCm": 15
+    },
+    "imageFile": "086.png"
+  },
+  "044": {
+    "code": "044",
+    "name": "СУМКА №2",
+    "dimensions": {
+      "heightCm": 13,
+      "heightWithHandleCm": 44,
+      "lengthCm": 28,
+      "widthCm": 20
+    },
+    "imageFile": "044.png"
+  },
+  "032": {
+    "code": "032",
+    "name": "КАПЕЛЮХ ОВАЛЬНИЙ ЗІ ШПОНОМ №2",
+    "dimensions": {
+      "heightCm": 16,
+      "heightWithHandleCm": 45,
+      "lengthCm": 42,
+      "widthCm": 30
+    },
+    "imageFile": "032.png"
+  },
+  "027/2": {
+    "code": "027/2",
+    "name": "ТАРІЛКА КРУГЛА З ДВОМА РУЧКАМИ №2",
+    "dimensions": {
+      "heightCm": 8,
+      "heightWithHandleCm": 39,
+      "lengthCm": 20,
+      "widthCm": 20
+    },
+    "imageFile": "027-2.png"
+  },
+  "030": {
+    "code": "030",
+    "name": "КАПЕЛЮХ КОНУСНИЙ №2",
+    "dimensions": {
+      "heightCm": 10,
+      "heightWithHandleCm": 45,
+      "lengthCm": 34,
+      "widthCm": 28
+    },
+    "imageFile": "030.png"
+  },
+  "019": {
+    "code": "019",
+    "name": "КВАДРАТИК",
+    "dimensions": {
+      "heightCm": 8,
+      "heightWithHandleCm": 34,
+      "lengthCm": 12,
+      "widthCm": 12
+    },
+    "imageFile": "019.png"
+  },
+  "073": {
+    "code": "073",
+    "name": "ПРЯМОКУТНИЙ",
+    "dimensions": {
+      "heightCm": 8,
+      "heightWithHandleCm": 36,
+      "lengthCm": 22,
+      "widthCm": 13
+    },
+    "imageFile": "073.png"
+  },
+  "107": {
+    "code": "107",
+    "name": "КРУГЛИЙ МАЛИЙ №3",
+    "dimensions": {
+      "heightCm": 16,
+      "heightWithHandleCm": 35,
+      "lengthCm": 24,
+      "widthCm": 24
+    },
+    "imageFile": "107.png"
+  },
+  "106": {
+    "code": "106",
+    "name": "КРУГЛИЙ МАЛИЙ №2",
+    "dimensions": {
+      "heightCm": 14,
+      "heightWithHandleCm": 30,
+      "lengthCm": 22,
+      "widthCm": 22
+    },
+    "imageFile": "106.png"
+  },
+  "105": {
+    "code": "105",
+    "name": "КРУГЛИЙ МАЛИЙ №1",
+    "dimensions": {
+      "heightCm": 12,
+      "heightWithHandleCm": 25,
+      "lengthCm": 20,
+      "widthCm": 20
+    },
+    "imageFile": "105.png"
+  },
+  "029": {
+    "code": "029",
+    "name": "КАПЕЛЮХ КОНУСНИЙ №1",
+    "dimensions": {
+      "heightCm": 15,
+      "heightWithHandleCm": 43,
+      "lengthCm": 24,
+      "widthCm": 24
+    },
+    "imageFile": "029.png"
+  },
+  "046": {
+    "code": "046",
+    "name": "КРУГЛИЙ КОНУСНИЙ №2",
+    "dimensions": {
+      "heightCm": 15,
+      "heightWithHandleCm": 43,
+      "lengthCm": 18,
+      "widthCm": 18
+    },
+    "imageFile": "046.png"
+  },
+  "017": {
+    "code": "017",
+    "name": "ЧОВЕН №4",
+    "dimensions": {
+      "heightCm": 17,
+      "heightWithHandleCm": 60,
+      "lengthCm": 42,
+      "widthCm": 25
+    },
+    "imageFile": "017.png"
+  },
+  "016": {
+    "code": "016",
+    "name": "ЧОВЕН №3",
+    "dimensions": {
+      "heightCm": 13,
+      "heightWithHandleCm": 57,
+      "lengthCm": 35,
+      "widthCm": 20
+    },
+    "imageFile": "016.png"
+  },
+  "002": {
+    "code": "002",
+    "name": "ОВАЛЬНИЙ №2",
+    "dimensions": {
+      "heightCm": 11,
+      "heightWithHandleCm": 60,
+      "lengthCm": 25,
+      "widthCm": 17
+    },
+    "imageFile": "002.png"
+  },
+  "001": {
+    "code": "001",
+    "name": "ОВАЛЬНИЙ №1",
+    "dimensions": {
+      "heightCm": 11,
+      "heightWithHandleCm": 55,
+      "lengthCm": 22,
+      "widthCm": 15
+    },
+    "imageFile": "001.png"
+  },
+  "037": {
+    "code": "037",
+    "name": "ВЕЛИКИЙ ОВАЛЬНИЙ №1",
+    "dimensions": {
+      "heightCm": 16,
+      "heightWithHandleCm": 70,
+      "lengthCm": 35,
+      "widthCm": 25
+    },
+    "imageFile": "037.png"
+  },
+  "003": {
+    "code": "003",
+    "name": "ОВАЛЬНИЙ №3",
+    "dimensions": {
+      "heightCm": 13,
+      "heightWithHandleCm": 60,
+      "lengthCm": 30,
+      "widthCm": 22
+    },
+    "imageFile": "003.png"
+  },
+  "022": {
+    "code": "022",
+    "name": "КРУГЛИЙ З ОДНІЄЮ РУЧКОЮ №1",
+    "dimensions": {
+      "heightCm": 12,
+      "heightWithHandleCm": 52,
+      "lengthCm": 15,
+      "widthCm": 15
+    },
+    "imageFile": "022.png"
+  },
+  "023": {
+    "code": "023",
+    "name": "КРУГЛИЙ З ОДНІЄЮ РУЧКОЮ №2",
+    "dimensions": {
+      "heightCm": 13,
+      "heightWithHandleCm": 55,
+      "lengthCm": 20,
+      "widthCm": 20
+    },
+    "imageFile": "023.png"
+  },
+  "034": {
+    "code": "034",
+    "name": "ТАРІЛКА ОВАЛЬНА №1",
+    "dimensions": {
+      "heightCm": 8,
+      "heightWithHandleCm": 36,
+      "lengthCm": 23,
+      "widthCm": 20
+    },
+    "imageFile": "034.png"
+  },
+  "035": {
+    "code": "035",
+    "name": "ТАРІЛКА ОВАЛЬНА №2",
+    "dimensions": {
+      "heightCm": 11,
+      "heightWithHandleCm": 36,
+      "lengthCm": 26,
+      "widthCm": 23
+    },
+    "imageFile": "035.png"
+  },
+  "026": {
+    "code": "026",
+    "name": "ТАРІЛКА КРУГЛА №1",
+    "dimensions": {
+      "heightCm": 8,
+      "heightWithHandleCm": 28,
+      "lengthCm": 18,
+      "widthCm": 18
+    },
+    "imageFile": "026.png"
+  },
+  "027": {
+    "code": "027",
+    "name": "ТАРІЛКА КРУГЛА №2",
+    "dimensions": {
+      "heightCm": 8,
+      "heightWithHandleCm": 36,
+      "lengthCm": 20,
+      "widthCm": 20
+    },
+    "imageFile": "027.png"
+  },
+  "045": {
+    "code": "045",
+    "name": "КРУГЛИЙ КОНУСНИЙ №1",
+    "dimensions": {
+      "heightCm": 14,
+      "heightWithHandleCm": 38,
+      "lengthCm": 15,
+      "widthCm": 15
+    },
+    "imageFile": "045.png"
+  },
+  "033": {
+    "code": "033",
+    "name": "СУВЕНІРНИЙ",
+    "dimensions": {
+      "heightCm": 15,
+      "heightWithHandleCm": 62,
+      "lengthCm": 35,
+      "widthCm": 28
+    },
+    "imageFile": "033.png"
+  },
+  "085": {
+    "code": "085",
+    "name": "ВЕЛИКИЙ КРУГЛИЙ №3",
+    "dimensions": {
+      "heightCm": 12,
+      "heightWithHandleCm": 50,
+      "lengthCm": 35,
+      "widthCm": 35
+    },
+    "imageFile": "085.png"
+  },
+  "031": {
+    "code": "031",
+    "name": "КАПЕЛЮХ ОВАЛЬНИЙ ЗІ ШПОНОМ №1",
+    "dimensions": {
+      "heightCm": 15,
+      "heightWithHandleCm": 36,
+      "lengthCm": 35,
+      "widthCm": 28
+    },
+    "imageFile": "031.png"
+  },
+  "091": {
+    "code": "091",
+    "name": "КАПЕЛЮХ КРУГЛИЙ З НАКЛАДКОЮ №1",
+    "dimensions": {
+      "heightCm": 18,
+      "heightWithHandleCm": 42,
+      "lengthCm": 38,
+      "widthCm": 25
+    },
+    "imageFile": "091.png"
+  },
+  "101": {
+    "code": "101",
+    "name": "ОВАЛЬНИЙ ПРОСТИЙ ЗІ ШПОНОМ",
+    "dimensions": {
+      "heightCm": 10,
+      "heightWithHandleCm": 65,
+      "lengthCm": 22,
+      "widthCm": 13
+    },
+    "imageFile": "101.png"
+  }
+}
